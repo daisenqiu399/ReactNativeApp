@@ -13,7 +13,7 @@ const Button = ({
     hasShadow = true,
 }) => {
     const shadowStyle = {
-        shadowStyleColor: theme.colors.dark,
+        shadowColor: theme.colors.dark,
         shadowOffset: { width: 0, height: 10 },
         shadowOpacity: 0.2,
         shadowRadius: 8,
@@ -27,20 +27,19 @@ const Button = ({
         )
     }
     return (
-        <View>
-            <Pressable onPress={onPress} style={[styles.button, buttonStyle, hasShadow && shadowStyle]}>
-                <Text style={[styles.text, textStyle]}>{title}</Text>
-            </Pressable>
-        </View>
+        <Pressable onPress={onPress} style={[styles.button, buttonStyle, hasShadow && shadowStyle]}>
+        <Text style={[styles.text, textStyle]}>{title}</Text>
+    </Pressable>
     )
 }
 const styles = StyleSheet.create({
     button: {
         backgroundColor: theme.colors.primary,
-        height: hp(0.6),
+        height: hp(6.6),
         justifyContent: 'center',
-        borderCurve: 'continous',
-        boderRadius: theme.radius.xl,
+        alignItems:'center',
+        borderCurve: 'continuous',
+        borderRadius: theme.radius.xl,
     },
     text: {
         fontSize: hp(2.5),

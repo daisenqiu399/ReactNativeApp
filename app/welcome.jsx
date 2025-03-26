@@ -16,13 +16,33 @@ const WelcomPage=()=>{
     return(
        <ScreenWrapper bg={'white'}>
         <StatusBar style='dark'/>
+        <View style={styles.container}>
         <Image style={styles.welcomeImage} resizeMode="contain" source={require('../assets/images/welcome.png')}/>
-
-      
-
+       <View style={{gap:20}}>
+        <Text style={styles.title}>LinkUp!</Text>
+        <Text style={styles.punchline}>
+            Where every thought finds a home and every image tells a story.
+        </Text>
+       </View>
+       <View style={styles.footer}>
+          <Button 
+            title="Getting Started" 
+            buttonStyle={{marginHorizontal: wp(3)}} 
+            onPress={()=> router.push('signUp')}
+          />
+          <View style={styles.bottomTextContainer}>
+              <Text style={styles.loginText}>
+                Already have an account! 
+              </Text>
+              <Pressable onPress={()=> router.push('/login')}>
+                <Text style={[styles.loginText, {color: theme.colors.primaryDark, fontWeight: theme.fonts.semibold}]}>Login</Text>
+              </Pressable>
+          </View>
+          
+        </View>
+       </View>
        </ScreenWrapper>
     )
-    
 }
 const styles = StyleSheet.create({
     container: {
