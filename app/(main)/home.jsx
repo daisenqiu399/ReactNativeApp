@@ -6,6 +6,7 @@ import { hp, wp } from '../../helpers/common'
 import { theme } from '../../constants/theme'
 import ScreenWrapper from '../../components/ScreenWrapper'
 import { useRouter } from 'expo-router'
+import  Icon  from '../../assets/icons'
 
 
 const HomeScreen = () => {
@@ -27,6 +28,13 @@ const HomeScreen = () => {
                 rounded={theme.radius.sm}
                 style={{borderWidth: 2}}
               />
+            </Pressable>
+
+
+            <Pressable onPress={()=>router.push('newPost')}>
+                <Icon name="plus" size={hp(3.2)} strokeWidth={2} color={theme.colors.text}/>
+                <Text>Create</Text>
+
             </Pressable>
 
 
