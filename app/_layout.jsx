@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Stack, useRouter } from 'expo-router'
 import { AuthProvider, useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabase'
-// import { getUserData } from '../services/userService'
+import { getUserData } from '../services/userServices'
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: TNodeChildrenRenderer', 'Warning: MemoizedTNodeRenderer', 'Warning: TRenderEngineProvider']); // Ignore log notification by message
 const _layout = () => {
@@ -35,10 +35,10 @@ const MainLayout = ()=>{
         })
     }, []);
 
-    // const updateUserData = async (user)=>{
-    //     let res = await getUserData(user.id);
-    //     if(res.success) setUserData(res.data);
-    // }
+    const updateUserData = async (user)=>{
+        let res = await getUserData(user.id);
+        if(res.success) setUserData(res.data);
+    }
 
     return (
         <Stack 
@@ -46,12 +46,12 @@ const MainLayout = ()=>{
                 headerShown: false
             }}
         >
-            <Stack.Screen
+            {/* <Stack.Screen
                 name="(main)/postDetails"
                 options={{
                     presentation: 'modal'
                 }}
-            />
+            /> */}
         </Stack>
     )
 }
