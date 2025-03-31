@@ -75,7 +75,7 @@ const EditProfile=()=>{
     return (
         <ScreenWrapper bg='white'>
           <View style={styles}>
-
+          <Text>this is editProfile</Text>
           </View>
         </ScreenWrapper>
     )

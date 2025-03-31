@@ -12,8 +12,8 @@ import ScreenWrapper from '../../components/ScreenWrapper'
 import Icon from '../../assets/icons'
 import Avatar from '../../components/Avatar'
 import { supabase } from '../../lib/supabase'
-// import {fetchPosts} from '../../services/postService'
-// import PostCard from '../../components/PostCard'
+import {fetchPosts} from '../../services/postService'
+import PostCard from '../../components/PostCard'
 import Loading from '../../components/Loading'
 
 var limit = 0;
@@ -58,46 +58,46 @@ const Profile = () => {
         ]);
     }
     return (
-        // <ScreenWrapper bg='white'>
-        //     <FlatList
-        //     data={posts}
-        //     ListHeaderComponent={<UserHeader user={user} handleLogout={handleLogout} router={router}/>}
-        //     ListHeaderComponentStyle={{marginBottom:30}}
-        //     showsVerticalScrollIndicator={false}
-        //     contentContainerStyle={styles.listStyle}
-        //     keyExtractor={(item,index)=>item.id.toString()}
-        //     renderItem={({item})=><PostCard
-        //     item={item}
-        //     currentUser={user}
-        //     router={router}
-        //     />}
-        //     onEndReached={()=>{
-        //        getPosts();
-        //        console.log('got to the end');
-        //     }}
-        //     onEndReachedThreshold={0}
-        //     ListFooterComponent={hasMore?(
-        //         <View style={{marginTop:posts.length==0?100:30}}>
-        //          <Loading/>
-        //         </View>
-        //     ):(
-        //         <View style={{marginVertical:30}}>
-        //        <Text style={styles.noPosts}>no more posts</Text>
-        //         </View>
-        //     )}
-        //     />
-        // </ScreenWrapper>
-        <View>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-            <Text>hi</Text>
-        </View>
+        <ScreenWrapper bg='white'>
+            <FlatList
+            data={posts}
+            ListHeaderComponent={<UserHeader user={user} handleLogout={handleLogout} router={router}/>}
+            ListHeaderComponentStyle={{marginBottom:30}}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.listStyle}
+            keyExtractor={(item,index)=>item.id.toString()}
+            renderItem={({item})=><PostCard
+            item={item}
+            currentUser={user}
+            router={router}
+            />}
+            onEndReached={()=>{
+               getPosts();
+               console.log('got to the end');
+            }}
+            onEndReachedThreshold={0}
+            ListFooterComponent={hasMore?(
+                <View style={{marginTop:posts.length==0?100:30}}>
+                 <Loading/>
+                </View>
+            ):(
+                <View style={{marginVertical:30}}>
+               <Text style={styles.noPosts}>no more posts</Text>
+                </View>
+            )}
+            />
+        </ScreenWrapper>
+        // <View>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        //     <Text>hi</Text>
+        // </View>
     )
 
 }
