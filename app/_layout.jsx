@@ -46,12 +46,12 @@ const MainLayout = ()=>{
                 headerShown: false
             }}
         >
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="(main)/postDetails"
                 options={{
                     presentation: 'modal'
                 }}
-            /> */}
+            />
         </Stack>
     )
 }
